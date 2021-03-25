@@ -48,18 +48,16 @@ class Directory extends Component{
     
 
     render() {
-        const sections = [];
-
         return (
             <div className="directory-menu">
                 {
                     //We can destructire the section into this code.
-                    this.state.sections.map(({title, imageUrl, id, size}) => (
+                    // this.state.sections.map(({ title, imageUrl, id, size }) => (
+                    // or
+                    this.state.sections.map(({ id, ...otherSectionProps }) => (
                         <MenuItem 
                             key={id} 
-                            title={title} 
-                            imageUrl={imageUrl}
-                            size={size}
+                            {...otherSectionProps}
                         />
                     ))
                 }
